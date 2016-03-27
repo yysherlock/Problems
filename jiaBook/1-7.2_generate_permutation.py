@@ -1,4 +1,3 @@
-from collections import deque
 
 def generatePermutation(prefix,S):
     if len(S) == 0: print prefix
