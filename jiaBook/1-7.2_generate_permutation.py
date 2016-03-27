@@ -4,10 +4,10 @@ def generatePermutation(prefix,S):
     else:
         for i in range(len(S)):
 	    if i>0 and S[i]==S[i-1]: continue # add this line to deal with the duplicate elements
-            cur = S[i]
+            cur = S[i] # reduce states
             S.pop(i)
 	    generatePermutation(prefix+[cur], S)
-	    S.insert(i,cur)
+	    S.insert(i,cur) # recover states
 
 def perm(S=[],n=1):
     if not S: S = [i+1 for i in range(n)]
