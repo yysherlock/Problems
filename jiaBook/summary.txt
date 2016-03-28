@@ -55,4 +55,7 @@ bitmap 长度固定，就是总集合 S 中元素的个数。
 0 0 0 1
 0 0 0 0
 
+#1-7.2_generate_subset_bitwise.py
+num<<i 将 num 左移 i 位 == num * (2**i)
+
 
