@@ -58,4 +58,10 @@ bitmap 长度固定，就是总集合 S 中元素的个数。
 #1-7.2_generate_subset_bitwise.py
 num<<i 将 num 左移 i 位 == num * (2**i)
 
+#1-7.4_backtrack_8queens.py
+递归构造解。
+当 当前解 满足一定的条件才继续递归构造，否则回溯。
+
+
+
 
