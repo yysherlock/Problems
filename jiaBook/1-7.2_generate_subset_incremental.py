@@ -19,7 +19,7 @@ def generateSubset(S,subset,pos,selectpos):
 #	setElem(pos,cur,subset) # increase elem step at ith pos
 	subset.append(cur)
 	generateSubset(S, subset,pos + 1,selectpos)
-	# recover, prepare for change another elem at ith pos
+	# recover, prepare for choose another elem at ith pos
 	subset.pop(-1)
 
 generateSubset([1,2,3,4],[],0,0)
