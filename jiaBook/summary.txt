@@ -2,7 +2,7 @@
 
     递归外套for循环依次遍历，一般为了达到递归终止条件，需要不断减少状态，直至递归返回，接着要恢复状态一遍for循环接着遍历。否则，上层递归函数的for循环会会OutOfIndex。
 
-#1-7.2_generate_subset.py
+#1-7.2_generate_subset_incremental.py
 
 增量法，subset每次选择一个元素增加，第i次/层迭代（for循环）增加有n-i+1中选择（从集合S中）。
 想像的难点在于，正常思维是尝试遍第i个元素再尝试i+1 pos的情况，
@@ -27,6 +27,8 @@
 	 [3,4],
      [4],
 	
+#1-7.2_generate_subset_bitmap.py
+
 位向量法，通过变化 bitmap 来得到不同的子集。
 bitmap 长度固定，就是总集合 S 中元素的个数。
 还是将子递归函数看成是父函数的 workhorse，这样想方便设计递归函数内容。
