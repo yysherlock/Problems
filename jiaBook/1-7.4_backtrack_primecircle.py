@@ -37,5 +37,4 @@ def search(S,sol,pos):
 	    sol.pop(-1)
 	    vis[i] = 0
     
-search([1,2,3,4,5,6],[1],1)
-
+search([1,2,3,4,5,6],[1],1) # make the sol[0] always be 1, because it's a circle.
