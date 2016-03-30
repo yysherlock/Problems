@@ -1,4 +1,3 @@
-global cnt
 
 def search(S,sol):
     global cnt
