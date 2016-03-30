@@ -4,7 +4,7 @@ def search(S,sol):
 
     #"""    
     if sol: print ''.join(sol)
-    if cnt == N: return 0
+    if cnt == N: return 1 # find the target
     else: cnt += 1
     """
     if cnt == N:
@@ -22,10 +22,11 @@ def search(S,sol):
 	        ok = 0
 		break
 	if ok:
-	    if not search(S,sol): return 0
+	    #search(S,sol) # search all hard strings constructed by elements in S.
+	    if search(S,sol): return 1
 	sol.pop(-1)
         
-    return 1
+    return 0
 
 #S = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O',\
 #	'P','Q','R','S','T','U','V','W','X','Y','Z']
