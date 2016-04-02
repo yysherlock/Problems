@@ -2,12 +2,11 @@ from collections import deque
 from copy import deepcopy
 import sys
 
-start = [[2,6,4],[1,3,7],[0,5,8],[2,0],0]
+start = [[2,6,4],[1,3,7],[0,5,8],[2,0],0] # cur[-1]: Idx in dist[], cur[-2]: empty slot position
 target = [[8,1,5],[7,3,6],[4,0,2],[2,1],-1]
 
-def search():
-    #global start, emptyx, emptyy
-    #emptyx,emptyy = 2,0 # empty slot position: (emptyx, emptyy)
+def bfs():
+    # empty slot position: (emptyx, emptyy)
 
     dist = [0]
     found = 0
@@ -18,9 +17,6 @@ def search():
 
     while len(q)>0:
         cur = q.popleft()
-        #print cur
-        ##if step == 10: sys.exit(1)
-        ##step += 1
         if cur[:-1] == target[:-1]:
             found = 1 # find target
             break
@@ -49,4 +45,4 @@ def search():
         print -1
 
 
-search()
+bfs()
