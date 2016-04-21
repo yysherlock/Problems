@@ -18,3 +18,23 @@ class Solution(object):
             self.walk(curx+1,cury,m,n)
         if cury < m: # go down
             self.walk(curx,cury+1,m,n)
+
+class Solution1(object):
+    # Time Limit Exceeded
+    def uniquePaths(self, m, n):
+        """
+        :type m: int
+        :type n: int
+        :rtype: int
+        """
+        return self.walk(m,n)
+
+    def walk(self,m,n):
+        if n==1 and m==1:
+            return 1
+        if m > 1 and n > 1:
+            return self.walk(m-1,n) + self.walk(m,n-1) # many repeated subproblems
+        elif m > 1:
+            return self.walk(m-1,n)
+        else: # n > 1
+            return self.walk(m,n-1)
