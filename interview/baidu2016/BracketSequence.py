@@ -6,7 +6,7 @@ cost = []
 def check(s):
     left, right = 0, 0
     for c in s:
-        if left < right: return False
+        if left < right or c == '?': return False
         if c == '(': left += 1
         if c == ')': right += 1
     if left == right:
@@ -21,7 +21,7 @@ def generate(seq, pos, val, costIdx):
         seq = ''.join(seq)
         if check(seq):
             print 'valid:',seq
-            if '?' not in seq and val not in result.keys(): result[val] = seq
+            if val not in result.keys(): result[val] = seq
 
     for i in range(pos,len(seq)):
         if not seq[i] == '?':
