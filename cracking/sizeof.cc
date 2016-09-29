@@ -14,5 +14,7 @@ int main() {
     cout << "float:\t\t" << sizeof(float) << " bytes" << endl;
     cout << "double:\t\t" << sizeof(double) << " bytes" << endl;
     cout << "long double:\t" << sizeof(long double) << " bytes" << endl;
+    int a[] = {1,2,3};
+    cout << "array size: " << sizeof(a)/sizeof(int)<< endl;
     return 0;
 }

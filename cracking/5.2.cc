@@ -75,7 +75,7 @@ namespace Solution1{ // my first solution
 
 }
 
-#include <cstdlib>
+//#include <cstdlib>
 
 namespace Solution2{ // solution learned from others
     std::string print_binary(std::string val){
