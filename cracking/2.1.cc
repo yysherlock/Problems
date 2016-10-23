@@ -1,13 +1,18 @@
 #include <iostream>
 using namespace std;
-
+/*
 typedef struct node {
   int data;
   node* next;
-}node;
-
+} node;
+*/
+struct node {
+    int data;
+    node* next;
+};
+/*
 node* init(int a[], int n){
-    node* head, *p;
+    node *head, *p;
     for (int i=0; i<n; ++i){
       node* nd = new node();
       nd->data = a[i];
@@ -17,6 +22,22 @@ node* init(int a[], int n){
       }
       p->next = nd;
       p = nd;
+    }
+    return head;
+}
+*/
+
+node* init(int a[], int n){
+    node *head, *p;
+    for (int i=0; i<n; ++i){
+        node* nd = new node();
+        nd->data = a[i];
+        if(i==0) {
+            p = head = nd;
+        } else {
+            p->next = nd;
+            p = nd;
+        }
     }
     return head;
 }
@@ -34,7 +55,7 @@ void removeDuplicate(node* head){
           q = p->next;
         } else {
           p = p->next;
-          q = q->next;
+          q = q->next; // same as q = p->next;
         }
     }
     c = c->next;
