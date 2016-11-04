@@ -89,8 +89,7 @@ bool listEqual(node* h1, node* h2){
     return true;
 }
 
-bool huiwen(node *head){
-    // copy head list, return nhead
+node* copyList(node* head){
     node *p = head;
     node *nhead = NULL;
     node *prev = NULL;
@@ -102,7 +101,11 @@ bool huiwen(node *head){
         prev = nd;
         p = p->next;
     }
+    return nhead;
+}
 
+bool palindromic(node *head){
+    node *nhead = copyList(head);
     node *rev = reverseList(head);
     return listEqual(nhead, rev);
 }
@@ -113,7 +116,7 @@ int main(){
         1, 2, 3, 4, 3, 2, 1
     };
     node *head = init(a, n);
-    cout << huiwen(head) << endl;
+    cout << palindromic(head) << endl;
     //print(head);
     //print(reverseList(head));
     return 0;
